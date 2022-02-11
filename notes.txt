@@ -1,0 +1,35 @@
+What is JavaScript event loop
+
+JS heap and stack
+-single thread
+-when encounter something from WebAPI (like setTimeout, xhttp stuff)
+	will send it to WebAPI part of the browser
+WebAPIs
+-performs the function (setTimeout, sends xhttp request etc)
+-and sends the callback function to the event loop
+Event Loop
+-is simply a queue of functions waiting to be executed
+-executes the next function when the call stack is empty
+
+simple example:
+setTimeout(mycallback, 0) simply runs mycallback when everything in the main
+file is done executing, in particular, after window loads
+
+
+Basic server:
+python3 -m http.server
+
+
+interacting with DOM
+-in the F12 menu, top left corner is node picker
+-to refer to a DOM element in the console,
+	can right-click the element in Inspector and "Use in Console"
+	a temp0 object will appear in the console input line
+
+
+
+some Vue stuff:
+-@click has issues when the function involves "this"
+ (e.g. @click="someObject.method", and method has this.x = ...)
+ workaround:
+ @click="() => {someObject.method();}"

@@ -1,0 +1,28 @@
+<html>
+<head>
+	<title>Hello!</title>
+</head>
+<body>
+	<p>
+		<a href='index.html'>Click me!</a>
+		<ul>
+			<li>ABC</li>
+			<li>DEF</li>
+		</ul>
+		<p id='myid'>
+			My paragraph
+			<p>second paragraph</p>
+			<img src='visible.png'>
+		</p>
+	</p>
+	<script>
+		var x = 5;
+		const y = 6;
+		// y = 7 // no good!
+		const node = document.getElementById('myid');
+		setTimeout(function() {
+			node.innerHTML = x;
+		}, 1000);
+	</script>
+</body>
+</html>
