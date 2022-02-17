@@ -1,12 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="UTF-8">
 	<title>Feb 17, 2022</title>
 </head>
 <body>
 	<!-- these are comments -->
 	<div>
-		Reference: https://www.w3schools.com/TAgs/default.asp
+		Reference: <a href="https://www.w3schools.com/TAgs/default.asp">w3</a>
+		<br/>
+		https://github.com/YingHongTham/SUNYMaritime-CodingClub
+		<br/>
 	</div>
 	<div>
 		<a href="https://www.google.com">
@@ -88,7 +92,47 @@
 		<li>Second</li>
 	</ul>
 
+	<button onclick="increaseNumber()">Click me!</button>
+	<button onclick="decreaseNumber()">Click me to decrease!</button>
+	<div id="myid">5</div>
+
 	<script>
+		var x = 10;
+
+		// take in variable val,
+		// and set the div element "myid" to show val
+		function setMYIDinnerHTML(val) {
+			const elem = document.getElementById("myid");
+			elem.innerHTML = val;
+		}
+
+		function increaseNumber() {
+			x += 1; // equivalently: x = x + 1;
+			setMYIDinnerHTML(x);
+			console.log("Increasing x to ", x);
+			// const elem = document.getElementById("myid");
+			// elem.innerHTML = x;
+		}
+
+		function decreaseNumber() {
+			x -= 1;
+			setMYIDinnerHTML(x);
+			console.log("Decreasing x to ", x);
+		}
+
+		increaseNumber();
+
+		console.log("This is how you print to the console");
+
+
+		/*
+		setTimeout(
+			function() {
+				alert("Hello");
+			},
+			1000
+		);
+	 */
 	</script>
 </body>
 </html>
