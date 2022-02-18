@@ -97,11 +97,18 @@
 	<div id="myid">5</div>
 
 	<script>
-		var x = 10;
+		//var x = 10;
+		const elem = document.getElementById("myid");
+		var x = parseInt(elem.innerHTML);
+		x = "abc";
 
 		// take in variable val,
 		// and set the div element "myid" to show val
 		function setMYIDinnerHTML(val) {
+			if (typeof(val) !== "number") {
+				console.log("Bad input to setMYIDinnerHTML!");
+				return;
+			}
 			const elem = document.getElementById("myid");
 			elem.innerHTML = val;
 		}
@@ -120,7 +127,6 @@
 			console.log("Decreasing x to ", x);
 		}
 
-		increaseNumber();
 
 		console.log("This is how you print to the console");
 
@@ -133,6 +139,16 @@
 			1000
 		);
 	 */
+
+		function repeatEverySecond() {
+			setTimeout( repeatEverySecond, 1000);
+			const elem = document.createElement('div');
+			elem.innerHTML = "new div";
+			const myidElem = document.getElementById('myid');
+			myidElem.appendChild(elem);
+		}
+
+		repeatEverySecond();
 	</script>
 </body>
 </html>
