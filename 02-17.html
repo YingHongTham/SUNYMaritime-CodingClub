@@ -92,7 +92,7 @@
 		<li>Second</li>
 	</ul>
 
-	<button onclick="increaseNumber()">Click me!</button>
+	<button id="buttonID" onclick="increaseNumber()">Click me!</button>
 	<button onclick="decreaseNumber()">Click me to decrease!</button>
 	<div id="myid">5</div>
 
@@ -147,6 +147,9 @@
 			const myidElem = document.getElementById('myid');
 			myidElem.appendChild(elem);
 		}
+
+		const buttonElem = document.getElementById("buttonID");
+		buttomElem.click();
 
 		repeatEverySecond();
 	</script>
