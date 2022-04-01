@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+	<title>March 31, 2022</title>
+</head>
+<body>
+	<!-- these are comments -->
+	<div>
+		Reference: <a href='https://www.w3schools.com/TAgs/default.asp'>w3</a>
+		<br/>
+		<a href='https://github.com/YingHongTham/SUNYMaritime-CodingClub'>
+		https://github.com/YingHongTham/SUNYMaritime-CodingClub
+		</a>
+		<br/>
+	</div>
+	
+	<br/>
+
+	<!-- responding to changes in value of input -->
+	<div>
+		<input id='textInput' type="text" placeholder="Input text!">
+	</div>
+	<div id='textOutput'></div>
+	<script>
+		// takes value in input box, turn to upper case,
+		// and writes to #textOutput div
+		function updateTextOutput() {
+			const textInput = document.getElementById('textInput');
+			const textOutput = document.getElementById('textOutput');
+			textOutput.innerHTML = textInput.value.toUpperCase();
+			console.log('change');
+		}
+
+		// when the value of input box changes, call updateTextOutput
+		// note need to enter for it to register change and emit event
+		window.addEventListener('change', (ev) => {
+			updateTextOutput();
+		});
+	</script>
+	<br/>
+
+	<!-- 
+		expected behaviour: when mouse goes over green div,
+			it should turn blue
+			and turn back to green when mouse goes out
+		here we load two divs, one green one blue
+	-->
+	<div id='greenDiv'
+			 style='width: 200px; height: 200px; background-color:green'></div>
+	<div id='blueDiv'
+			 style='width: 200px; height: 200px; background-color:blue'></div>
+	<script>
+		const greenDiv = document.getElementById('greenDiv');
+		const blueDiv = document.getElementById('blueDiv');
+		blueDiv.style.display = 'none'; // hide
+		greenDiv.addEventListener('mouseover', (ev) => {
+			console.log('blue');
+			//greenDiv.style.backgroundColor = 'blue';
+			greenDiv.style.display = 'none'; // hide
+			blueDiv.style.display = 'block'; // show
+		});
+		blueDiv.addEventListener('mouseout', (ev) => {
+			console.log('green');
+			//greenDiv.style.backgroundColor = 'green';
+			greenDiv.style.display = 'block'; // show
+			blueDiv.style.display = 'none'; // hide
+		});
+	</script>
+	
+	<!-- alternative: change the color of div on events -->
+	<!--
+	<div id='greenDiv'
+			 style='width: 200px; height: 200px; background-color:green'></div>
+	<script>
+		const greenDiv = document.getElementById('greenDiv');
+		greenDiv.addEventListener('mouseover', (ev) => {
+			greenDiv.style.backgroundColor = 'blue';
+		});
+		greenDiv.addEventListener('mouseout', (ev) => {
+			greenDiv.style.backgroundColor = 'green';
+		});
+	</script>
+	-->
+</body>
+</html>
